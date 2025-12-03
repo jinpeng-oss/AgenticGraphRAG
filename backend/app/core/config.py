@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     # --- 模型名称配置 ---
     MODEL_SMART: str = "gpt-4o"  
     MODEL_FAST: str = "gpt-4o-mini" 
+    MODEL_STRICT: str = "gpt-4o"
 
     # --- Neo4j 配置 (自动读取环境变量) ---
     NEO4J_URI: str = "bolt://localhost:7687"
