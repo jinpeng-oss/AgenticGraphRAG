@@ -27,7 +27,7 @@ class QdrantManager:
         """获取原生客户端，方便给 LangChain 使用"""
         return self._client
 
-    def create_collection_if_not_exists(self, collection_name: str, vector_size: int = 2048):
+    def create_collection_if_not_exists(self, collection_name: str, vector_size: int = 4096):
         """
         创建一个集合 (类似 SQL 的 Table)
         vector_size: 向量维度

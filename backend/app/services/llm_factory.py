@@ -100,7 +100,7 @@ if __name__ == "__main__":
         logger.info("1️⃣ 测试 FAST 模式...")
         fast_llm = LLMFactory.get_llm(mode="fast")
         res_fast = fast_llm.invoke([HumanMessage(content="1+1等于几？只回答数字。")])
-        logger.success(f"✅ Fast Mode 响应: {res_fast.content}")
+        logger.success(f"✅ Fast Mode 响应: {res_fast.content.split()[0]}")
 
         # 2. 测试 Smart 模式
         logger.info("2️⃣ 测试 SMART 模式...")

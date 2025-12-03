@@ -28,9 +28,10 @@ class Settings(BaseSettings):
     NEO4J_PASSWORD: str 
     
     # --- 嵌入模型配置 ---
-    EMBD_BASE_URL: str = "https://api.siliconflow.cn/v1/embeddings"
+    EMBD_BASE_URL: str = "https://api.siliconflow.cn/v1/"
     EMBD_API_KEY: str
     EMBD_MODEL_NAME: str = "Qwen/Qwen3-Embedding-8B"
+    EMBD_DIMENSIONS: int = 4096
 
     # --- Qdrant 配置 (自动读取环境变量) ---
     QDRANT_URL: str = "./qdrant_data"
