@@ -522,3 +522,195 @@ For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/erro
 2025-12-07 15:45:56.103 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['SpaceX', '火箭']
 2025-12-07 15:45:57.322 | INFO     | app.core.nodes.generation:generation_node:37 - 🧠 [生成节点] 正在生成回答...
 2025-12-07 15:46:13.939 | SUCCESS  | app.core.nodes.generation:generation_node:50 - ✅ 回答生成完毕
+2025-12-07 16:13:26.961 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:13:26.973 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:13:27.202 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:13:27.782 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:13:27.875 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:13:27.875 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:13:27.878 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:13:27.880 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:13:27.884 | INFO     | app.core.nodes.retrieval:retrieve_node:9 - 🔍 [检索] 开始: 马斯克的太空公司叫什么
+2025-12-07 16:13:29.434 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:13:29.910 | INFO     | app.core.nodes.generation:generation_node:15 - 🧠 [生成] 正在生成回答...
+2025-12-07 16:13:39.904 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [校验] 正在评估回答质量...
+2025-12-07 16:13:39.956 | WARNING  | app.core.nodes.validation:validation_node:56 - ⚠️ [校验] 执行出错: Error code: 400 - {'error': {'message': 'This response_format type is unavailable now', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}，默认通过
+2025-12-07 16:17:17.485 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:17:17.497 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:17:17.719 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:17:18.387 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:17:18.480 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:17:18.481 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:17:18.484 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:17:18.486 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:17:18.489 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:17:19.939 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:18:20.867 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:18:20.870 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:18:30.004 | INFO     | app.core.nodes.validation:validation_node:25 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:18:30.057 | WARNING  | app.core.nodes.validation:validation_node:57 - ⚠️ [VALIDATION] 校验服务异常: Error code: 400 - {'error': {'message': 'This response_format type is unavailable now', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}，默认放行
+2025-12-07 16:18:30.060 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:18:31.466 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: []
+2025-12-07 16:18:31.466 | INFO     | app.services.hybrid_search:search:128 - 未提取到实体，fallback 到纯向量检索
+2025-12-07 16:18:31.466 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: []
+2025-12-07 16:18:31.467 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:22:39.649 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:22:39.659 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:22:39.875 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:22:40.734 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:22:40.826 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:22:40.826 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:22:40.828 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:22:40.830 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:22:40.834 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:22:42.704 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:22:43.196 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:22:43.197 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:22:50.160 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:22:59.955 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: INVALID | 理由: 回答包含了未在提供的上下文中出现的信息，如公司全称、简称、创立年份和目标，属于幻觉。
+2025-12-07 16:22:59.960 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:23:01.790 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['火箭']
+2025-12-07 16:23:02.269 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['火箭']
+2025-12-07 16:23:02.270 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:23:17.065 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:23:57.924 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: INVALID | 理由: AI 回答部分准确（承认上下文无信息），但引入了上下文未提及的假设（如马斯克太空公司）和火箭例子，存在幻觉，不忠实于上下文。
+2025-12-07 16:25:55.749 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:25:55.759 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:25:55.972 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:25:56.773 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:25:56.868 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:25:56.868 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:25:56.871 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:25:56.872 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:25:56.875 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:25:58.383 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:26:25.149 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:26:25.151 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:26:30.243 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是**SpaceX**（全称：太空探索技术公司，Space Exploration Technologies Corp.）。
+2025-12-07 16:26:30.244 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:27:00.494 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: INVALID | 理由: 回答不是基于提供的上下文（上下文为空），因此不准确。
+2025-12-07 16:27:00.498 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:27:02.259 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['SpaceX', '火箭']
+2025-12-07 16:27:03.038 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['SpaceX', '火箭']
+2025-12-07 16:27:03.040 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:27:32.521 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 根据公开资料，埃隆·马斯克的太空公司SpaceX以其革命性的火箭而闻名。其最著名的火箭型号包括：
+
+1. **猎鹰1号（Falcon 1）**
+    *   **地位**：SpaceX自行研制的第一枚入轨运载火箭。
+    *   **著名原因**：它是第一枚由私人投资研发的液体燃料火箭成功进入地球轨道（2008年），开启了商业航天的新时代。
+
+2. **猎鹰9号（Falcon 9）**
+    *   **地位**：SpaceX主力中型运载火箭，全球现役火箭中发射次数最多、可靠性极高的型号。
+    *   **著名原因**：
+        *   **可重复使用性**：其第一级火箭能够垂直着陆回收并多次重复使用，极大地降低了航天发射成本，彻底改变了整个行业。
+        *   **载人任务**：是美国自航天飞机退役后，第一种恢复本土载人航天能力的运载火箭（搭载载人龙飞船）。
+        *   **高发射频率**：承担了公司大部分的商业卫星发射、国际空间站货运及载人任务。
+
+3. **猎鹰重型（Falcon Heavy）**
+    *   **地位**：目前现役运载能力最强的火箭（近地轨道运力超过63吨）。
+    *   **著名原因**：由三枚猎鹰9号的一级核心并联而成，推力巨大。其首次发射时，将马斯克的一辆特斯拉跑车送入太空，成为一次经典的营销和科技事件。
+
+4. **星舰（Starship）**
+    *   **地位**：SpaceX正在全力开发的、完全可重复使用的超重型运载系统。
+    *   **著名原因**：
+        *   **终极目标**：设计用于载人登陆月球、火星乃至更远的深空探索。
+        *   **规模与能力**：如果完全成功，它将成为人类历史上最大、最强的运载火箭。
+        *   **创新技术**：采用不锈钢结构、猛禽发动机群和“空中接力”等激进设计，目前正处于密集测试阶段。
+
+**总结而言，猎鹰9号以其可靠性和可回收技术成为目前最著名、最成功的商业火箭；而星舰则代表了未来，是目前最受瞩目的下一代航天运输系统。**
+2025-12-07 16:27:32.523 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:28:03.347 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: INVALID | 理由: 回答不是基于提供的上下文，上下文为空，因此无法验证准确性并可能存在幻觉。
+2025-12-07 16:29:04.700 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:29:04.717 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:29:04.928 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:29:06.416 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:29:06.512 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:29:06.512 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:29:06.515 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:29:06.517 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:29:06.520 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:29:08.085 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:29:08.785 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:29:08.787 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:29:17.879 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 根据上下文信息，马斯克的太空公司是 **SpaceX（Space Exploration Technologies Corp.）**。该公司由埃隆·马斯克于2002年创立，其主要目标是降低太空运输成本，研发先进的火箭技术，并进行深空探索。
+2025-12-07 16:29:17.881 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:29:53.790 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: INVALID | 理由: AI回答声称根据上下文信息，但上下文为空，不忠实于上下文。
+2025-12-07 16:29:53.794 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:29:55.386 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['火箭']
+2025-12-07 16:29:55.872 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['火箭']
+2025-12-07 16:29:55.873 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:30:07.985 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 目前提供的上下文信息为空，无法根据可靠信息回答该问题。如果您能提供相关资料，我将很乐意协助您。
+2025-12-07 16:30:07.987 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:30:37.247 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: VALID | 理由: 回答准确指出上下文为空，没有幻觉，直接回应问题，并在缺失信息时合理请求更多上下文。
+2025-12-07 16:30:48.409 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:30:48.417 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:30:48.649 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:30:53.822 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:30:53.916 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:30:53.916 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:30:53.920 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:30:53.920 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:30:53.923 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:30:55.686 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:30:57.508 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:30:57.510 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:31:03.210 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是 **SpaceX**（全称：Space Exploration Technologies Corp.，太空探索技术公司）。该公司成立于2002年，专注于开发可重复使用的火箭和航天器，旨在降低太空运输成本并实现火星殖民等长期目标。
+2025-12-07 16:31:03.211 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:31:28.299 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: VALID | 理由: 回答直接回应了用户问题，准确无误，基于正确事实，没有幻觉，且在上下文缺失的情况下合理。
+2025-12-07 16:31:28.303 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:31:29.908 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['火箭']
+2025-12-07 16:31:30.413 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['火箭']
+2025-12-07 16:31:30.415 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:32:04.337 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: SpaceX 拥有多款著名的火箭，它们共同定义了现代航天的新范式。以下是其最著名和具有里程碑意义的型号：
+
+**1. 猎鹰1号（Falcon 1）**
+*   **地位**：SpaceX的开山之作，世界上第一款由私人投资研发的液态燃料轨道火箭。
+*   **著名原因**：在经历了三次发射失败后，于**2008年9月28日第四次发射成功**，将模拟载荷送入轨道。这次成功拯救了濒临破产的SpaceX，证明了私营公司有能力进入轨道发射领域。
+
+**2. 猎鹰9号（Falcon 9）**
+*   **地位**：SpaceX的**主力火箭**，全球发射频率最高、最可靠的运载火箭之一。
+*   **著名原因**：
+    *   **可重复使用性革命**：其**一级火箭可垂直回收并重复使用**，极大地降低了发射成本，彻底改变了航天工业的经济模式。
+    *   **载人航天**：其载人龙飞船版本是**美国自航天飞机退役后首款载美国宇航员进入轨道的飞船**，结束了美国依赖俄罗斯飞船的历史。
+    *   执行了国际空间站货运补给、星链卫星部署、以及众多商业和政府发射任务。
+
+**3. 重型猎鹰（Falcon Heavy）**
+*   **地位**：目前现役**运力最强的火箭**（仅次于SLS和星舰）。
+*   **著名原因**：
+    *   由三枚猎鹰9号的一级火箭核心并联而成，拥有27台梅林发动机同时工作，推力巨大。
+    *   **2018年首飞时**，将马斯克的红色特斯拉跑车送入绕日轨道，其两个侧助推器**同步着陆**的画面成为航天史上的经典时刻。
+    *   主要用于发射大型军用卫星、深空探测器等重型载荷。
+
+**4. 星舰（Starship）**
+*   **地位**：SpaceX正在全力研发的**下一代、完全可重复使用的超重型运载系统**，目标是实现火星殖民。
+*   **著名原因**：
+    *   **规模与能力**：高约120米，是有史以来最大、最强的运载火箭，设计运力超过100吨至近地轨道。
+    *   **完全可重复使用**：旨在实现火箭**第一级（超重型助推器）和第二级（星舰飞船）都能回收并快速重复使用**。
+    *   **终极目标**：承载着将人类送往**月球（NASA阿尔忒弥斯计划）** 和**火星**的愿景。
+    *   虽然仍在测试阶段，但其大胆的设计、不锈钢材质和多次高调试飞（无论成功与否）都使其成为全球关注的焦点。
+
+**总结来说**，SpaceX的火箭著名之处不仅在于其技术参数，更在于它们**开创了可重复使用火箭的新时代**，以颠覆性的低成本和高可靠性，推动了商业航天的爆发式增长，并正在将人类的星际旅行梦想一步步变为现实。
+2025-12-07 16:32:04.339 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:32:35.850 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: VALID | 理由: 回答直接回应用户问题，准确列举了SpaceX的著名火箭（如猎鹰1号、猎鹰9号等），信息正确无误且无幻觉。尽管上下文为空，但基于常识推断'SpaceX'并给出合理回答。
+2025-12-07 16:35:49.526 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-07 16:35:49.541 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-07 16:35:49.753 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-07 16:36:05.149 | SUCCESS  | app.services.hybrid_search:_init_qdrant:97 - ✅ Qdrant实体库初始化完成
+2025-12-07 16:36:05.244 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-07 16:36:05.245 | SUCCESS  | app.services.hybrid_search:__init__:61 - ✅ HybridSearch初始化完成
+2025-12-07 16:36:05.248 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:36:05.249 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-07 16:36:05.253 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-07 16:36:07.151 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['马斯克', 'SpaceX']
+2025-12-07 16:36:30.894 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['马斯克', 'SpaceX']
+2025-12-07 16:36:30.896 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:36:41.549 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克创办的太空公司是 **SpaceX**（全称：**Space Exploration Tech...
+2025-12-07 16:36:41.552 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:36:50.551 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: VALID | 理由: 回答准确提供了马斯克创办的太空公司是SpaceX，包括其全称、成立时间、总部地点、目标和核心成就，所有信息均正确无误，且与问题高度相关。
+2025-12-07 16:36:50.555 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 它有什么著名的火箭？
+2025-12-07 16:36:52.053 | INFO     | app.services.hybrid_search:_extract_entities:160 - 提取实体: ['火箭']
+2025-12-07 16:36:53.133 | INFO     | app.core.nodes.retrieval:retrieve_node:21 -    - 找到实体: ['火箭']
+2025-12-07 16:36:53.134 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-07 16:37:26.334 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: SpaceX 著名的火箭主要包括以下型号，它们共同体现了公司在**可重复使用火箭**和**低成本航天...
+2025-12-07 16:37:26.336 | INFO     | app.core.nodes.validation:validation_node:30 - ⚖️ [VALIDATION] 正在校验...
+2025-12-07 16:37:52.009 | INFO     | app.core.nodes.validation:validation_node:47 -    - 结果: VALID | 理由: 回答直接回应了用户关于著名火箭的问题，准确列出了SpaceX的猎鹰1号、猎鹰9号、重型猎鹰和星舰，信息正确且无幻觉，在上下文缺失的情况下基于知识合理生成。

@@ -4,21 +4,25 @@ from langgraph.checkpoint.memory import MemorySaver
 from app.core.state import AgentState
 from app.core.nodes.retrieval import retrieve_node
 from app.core.nodes.generation import generation_node
+from app.core.nodes.validation import validation_node
 
-# 1. 定义图结构
+# 1. 初始化
 workflow = StateGraph(AgentState)
 
 # 2. 添加节点
 workflow.add_node("retrieve", retrieve_node)
 workflow.add_node("generate", generation_node)
+workflow.add_node("validate", validation_node)
 
-# 3. 定义边 (简单的线性流程)
-# Start -> Retrieve -> Generate -> End
+# 3. 设置边 (线性结构)
 workflow.set_entry_point("retrieve")
 workflow.add_edge("retrieve", "generate")
-workflow.add_edge("generate", END)
+workflow.add_edge("generate", "validate")
+workflow.add_edge("validate", END)
 
-# 4. 编译图 (带记忆功能)
-# MemorySaver 会在内存中保存对话状态
+# 4. 编译 (带记忆功能)
 memory = MemorySaver()
-app_graph = workflow.compile(checkpointer=memory)
+app = workflow.compile(checkpointer=memory)
+
+# 导出给 main.py 或测试脚本使用
+__all__ = ["app"]

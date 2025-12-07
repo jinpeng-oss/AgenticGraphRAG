@@ -5,17 +5,22 @@ from langgraph.graph.message import add_messages
 
 class AgentState(TypedDict):
     """
-    LangGraph 状态定义
-    messages: 存储完整的对话历史 (User + AI)
+    CRAG Agent 状态定义
     """
+    # 用户输入
     query: str
-    # ✅ 核心：add_messages 会自动把新消息 append 到列表末尾，而不是覆盖
+    
+    # 对话历史 (使用 add_messages 自动追加)
     messages: Annotated[List[BaseMessage], add_messages]
     
-    # 检索结果
-    entities: List[str]
-    graph_context: str
-    rag_context: str
+    # ---------------- 检索数据 ----------------
+    entities: List[str]      # 提取出的实体
+    graph_context: str       # 图谱关系
+    rag_context: str         # 最终拼接的上下文文本
     
-    # 最终答案
-    answer: str
+    # ---------------- 中间结果 ----------------
+    answer: str              # 生成节点产生的原始回答
+    
+    # ---------------- 校验结果 ----------------
+    validation_status: str   # valid / invalid / error
+    validation_reason: str   # 评分理由

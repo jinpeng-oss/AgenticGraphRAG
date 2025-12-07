@@ -1,44 +1,46 @@
 import asyncio
 from langchain_core.messages import HumanMessage
-from app.core.graph import app_graph
+from app.core.graph import app
 
-async def main():
-    # 模拟一个用户的 Session ID
-    config = {"configurable": {"thread_id": "user_999"}}
+async def test_full_flow():
+    # 模拟用户 session
+    config = {"configurable": {"thread_id": "test_user_007"}}
     
-    print("--- 🟢 第一轮对话 ---")
-    question1 = "马斯克的太空公司叫什么？"
+    # 📝 测试 1: 正常问题
+    query = "马斯克的太空公司是什么"
+    print(f"\n{'='*50}\n🧠 用户提问: {query}\n{'='*50}")
     
-    # 注意：LangGraph 的输入通常需要包含 messages
-    inputs1 = {
-        "query": question1,
-        "messages": [HumanMessage(content=question1)]
+    inputs = {
+        "query": query,
+        "messages": [HumanMessage(content=query)]
     }
     
-    async for event in app_graph.astream(inputs1, config=config):
-        for key, value in event.items():
-            print(f"Update from node: {key}")
-            # print(value) # 调试用
-            
-    # 获取最终状态
-    final_state1 = await app_graph.aget_state(config)
-    print(f"\n🤖 AI回答: {final_state1.values['answer']}")
+    # 流式运行，查看每个步骤
+    async for event in app.astream(inputs, config=config):
+        for node, values in event.items():
+            print(f"✅ 节点完成: [{node}]")
+            if node == "validate":
+                print(f"   👉 校验状态: {values.get('validation_status')}")
+                print(f"   👉 校验理由: {values.get('validation_reason')}")
     
-    print("\n\n--- 🔵 第二轮对话 (测试记忆) ---")
-    question2 = "它最著名的火箭是什么？" 
-    # 注意：这里我们指代了“它”，如果记忆不生效，AI会不知道“它”是谁
+    # 获取最终记忆
+    state = await app.aget_state(config)
+    print(f"\n🤖 最终回答: {state.values['answer']}")
+    
+    # 📝 测试 2: 追问 (测试记忆)
+    query2 = "它有什么著名的火箭？"
+    print(f"\n{'='*50}\n🧠 用户追问: {query2}\n{'='*50}")
     
     inputs2 = {
-        "query": question2,
-        "messages": [HumanMessage(content=question2)]
+        "query": query2,
+        "messages": [HumanMessage(content=query2)]
     }
     
-    async for event in app_graph.astream(inputs2, config=config):
-        for key, value in event.items():
-            print(f"Update from node: {key}")
-
-    final_state2 = await app_graph.aget_state(config)
-    print(f"\n🤖 AI回答: {final_state2.values['answer']}")
+    async for event in app.astream(inputs2, config=config):
+        pass # 简略输出
+        
+    state2 = await app.aget_state(config)
+    print(f"\n🤖 最终回答: {state2.values['answer']}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(test_full_flow())
