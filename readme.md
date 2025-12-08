@@ -10,3 +10,6 @@
 <a href="https://github.com/Zheng-Yu7463/AgenticGraphRAG/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Zheng-Yu7463/AgenticGraphRAG" />
 </a>
+
+
+![Alt](https://repobeats.axiom.co/api/embed/166d0a05e6aab6aeb61a7970e588dec6d9ffa653.svg "Repobeats analytics image")

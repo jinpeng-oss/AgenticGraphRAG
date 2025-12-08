@@ -1071,3 +1071,19 @@ For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/erro
 2025-12-08 11:17:31.200 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
 2025-12-08 11:17:31.200 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
 2025-12-08 11:17:31.200 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 12:09:47.777 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 东南大学财务管理课程第八周上了什么 (ID: user_123)
+2025-12-08 12:09:47.800 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 东南大学财务管理课程第八周上了什么
+2025-12-08 12:09:49.493 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['东南大学', '财务管理课程']
+2025-12-08 12:10:50.561 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['东南大学', '财务管理课程']
+2025-12-08 12:10:50.564 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 12:11:00.999 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 关于东南大学财务管理课程第八周的具体授课内容，我目前没有获取到相关的课程大纲或每周教学安排信息。这类...
+2025-12-08 12:11:01.001 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 12:11:29.295 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: AI 回答直接回应用户问题，承认缺乏具体信息并提供了获取信息的合理建议，避免了幻觉，在上下文无信息时表现合理。
+2025-12-08 18:37:54.642 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 东南大学财务管理课程第八周上了什么 (ID: user_123)
+2025-12-08 18:37:54.659 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 东南大学财务管理课程第八周上了什么
+2025-12-08 18:37:56.509 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['东南大学', '财务管理课程']
+2025-12-08 18:37:57.061 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['东南大学', '财务管理课程']
+2025-12-08 18:37:57.062 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 18:38:27.019 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 关于东南大学《财务管理》课程第八周的具体授课内容，**目前没有公开的统一课表信息**，因为各学院（如...
+2025-12-08 18:38:27.022 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 18:38:53.898 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接回应用户问题，承认信息缺失但基于通用教学大纲合理推测并提供核实方法，无幻觉，符合可变通性。
