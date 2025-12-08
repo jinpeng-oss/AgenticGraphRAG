@@ -5,6 +5,7 @@ import uvicorn
 
 from app.core.logger import logger
 from app.api.endpoints import router as chat_router
+from app.api.monitor import router as monitor_router
 
 # ✅ 引入初始化函数
 from app.services.hybrid_search import init_hybrid_search
@@ -36,6 +37,7 @@ app.add_middleware(
 )
 
 app.include_router(chat_router, prefix="/api/v1")
+app.include_router(monitor_router, prefix="/api/v1/monitor")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

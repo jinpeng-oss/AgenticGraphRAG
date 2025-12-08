@@ -123,6 +123,31 @@ class QdrantManager:
         )
 
         return response.points
+    
+    def check_health(self) -> Dict[str, Any]:
+        """检查 Qdrant 集合状态"""
+        client = self.get_client() # 使用懒加载获取
+        if not client:
+             return {"status": "down", "error": "Client init failed"}
+             
+        collection_name = "test-collection" # 你的集合名
+        try:
+            # 获取集合信息
+            info = client.get_collection(collection_name)
+            return {
+                "status": "healthy",
+                "collection": collection_name,
+                "vector_count": info.points_count,
+                "status_color": info.status.name, # green/yellow/red
+                "vectors_config": str(info.config.params.vectors)
+            }
+        except Exception as e:
+            # 如果是集合不存在，也算正常，只是没数据
+            if "Not found" in str(e):
+                return {"status": "healthy", "warning": "Collection not found"}
+            
+            logger.error(f"Qdrant 健康检查失败: {e}")
+            return {"status": "down", "error": str(e)}
 
 # --- 单例导出 ---
 try:

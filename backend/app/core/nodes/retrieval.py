@@ -1,9 +1,5 @@
 from typing import Dict, Any
 from app.core.state import AgentState
-# ❌ 旧写法 (直接导入变量，导致拿到的是旧的 None)
-# from app.services.hybrid_search import hybrid_search_service
-
-# ✅ 新写法 (导入模块，运行时动态获取)
 import app.services.hybrid_search as search_service 
 
 from app.core.logger import logger

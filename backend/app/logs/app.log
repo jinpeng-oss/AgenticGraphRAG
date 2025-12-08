@@ -890,3 +890,140 @@ For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/erro
 这是其最核心且专...
 2025-12-08 09:36:36.841 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
 2025-12-08 09:37:05.807 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接且准确地提供了马斯克的太空公司为SpaceX，基于公开信息，无幻觉。
+2025-12-08 09:42:51.509 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 09:42:54.520 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:42:54.775 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:42:54.776 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:42:54.803 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 09:42:54.865 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:42:54.871 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 09:42:55.263 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 09:42:55.264 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 09:42:55.265 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 10:10:21.755 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 马斯克的太空公司是什么 (ID: user_123)
+2025-12-08 10:10:21.772 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 10:10:23.620 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['马斯克']
+2025-12-08 10:10:24.290 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['马斯克']
+2025-12-08 10:10:24.293 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 10:10:31.306 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是**太空探索技术公司（SpaceX）**，成立于2002年，总部位于美国加利福尼亚...
+2025-12-08 10:10:31.308 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 10:10:57.704 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接回应用户问题，准确提供SpaceX信息，无幻觉，且上下文为空时基于常识合理。
+2025-12-08 10:11:36.777 | INFO     | app.api.endpoints:chat_sync:78 - 收到同步请求: 马斯克的太空公司是什么
+2025-12-08 10:11:36.782 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 10:11:38.742 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['马斯克']
+2025-12-08 10:11:39.244 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['马斯克']
+2025-12-08 10:11:39.245 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 10:11:56.168 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是 **SpaceX**（全称：**太空探索技术公司**，Space Explora...
+2025-12-08 10:11:56.170 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 10:12:15.694 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接回应了用户问题，信息准确无误，符合事实。
+2025-12-08 10:12:55.701 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 东南大学财务管理课程第八周上了什么 (ID: user_123)
+2025-12-08 10:12:55.715 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 东南大学财务管理课程第八周上了什么
+2025-12-08 10:12:57.755 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['东南大学', '财务管理课程']
+2025-12-08 10:12:58.267 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['东南大学', '财务管理课程']
+2025-12-08 10:12:58.268 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 10:13:31.487 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 由于我无法访问各大学实时的课程安排或具体教学日历，因此无法提供东南大学**财务管理课程第八周**确切...
+2025-12-08 10:13:31.489 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 10:13:53.330 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接回应问题，承认无法提供确切信息但基于通用知识给出合理推测，没有幻觉，并建议准确信息来源。
+2025-12-08 10:15:38.577 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 10:15:41.917 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 10:15:42.147 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:15:42.149 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:15:42.179 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 10:15:42.242 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 10:15:42.250 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 10:15:42.835 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 10:15:42.835 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 10:15:42.835 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 10:57:46.241 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 10:57:49.904 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 10:57:50.146 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:57:50.147 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:57:50.179 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 10:57:50.240 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 10:57:50.250 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 10:57:50.844 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 10:57:50.845 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 10:57:50.845 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 10:58:09.033 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 10:58:11.640 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 10:58:11.864 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:58:11.865 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:58:11.889 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 10:58:11.949 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 10:58:11.954 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 10:59:13.076 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 10:59:13.078 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 10:59:13.078 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 10:59:15.982 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 10:59:16.211 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:59:16.212 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:59:16.238 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 10:59:16.301 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 10:59:16.305 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 10:59:16.864 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 10:59:16.864 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 10:59:16.865 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 10:59:17.371 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 10:59:19.262 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 10:59:19.442 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:59:19.443 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 10:59:19.461 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 10:59:19.522 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 10:59:19.526 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 10:59:20.106 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 10:59:20.107 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 10:59:20.107 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:00:54.032 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 11:00:58.769 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:00:58.993 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:00:58.994 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:00:59.021 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 11:00:59.082 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:00:59.087 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 11:02:00.129 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 11:02:00.130 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 11:02:00.130 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:02:04.444 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:02:04.653 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:02:04.654 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:02:06.540 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:02:06.713 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:02:06.713 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:02:06.739 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 11:02:06.799 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:02:06.804 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 11:02:07.360 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 11:02:07.360 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 11:02:07.360 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:03:46.060 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 11:03:49.179 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:03:49.403 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:03:49.404 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:03:49.430 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 11:03:49.490 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:03:49.494 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 11:03:50.073 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 11:03:50.074 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 11:03:50.074 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:04:16.044 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 11:04:18.666 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:04:18.890 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:04:18.891 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:04:18.916 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 11:04:18.996 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:04:19.001 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 11:04:19.624 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 11:04:19.624 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 11:04:19.625 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:04:46.304 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 11:04:48.969 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 11:04:49.196 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:04:49.197 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 11:04:49.229 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 11:04:49.299 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:04:49.303 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 11:04:49.852 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 11:04:49.853 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 11:04:49.853 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 11:05:34.635 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 11:08:26.151 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
