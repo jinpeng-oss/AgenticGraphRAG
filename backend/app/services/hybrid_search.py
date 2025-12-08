@@ -213,11 +213,18 @@ class HybridSearchService:
             logger.warning(f"Neo4j查询失败: {e}")
             return ""
 
-try:
-    hybrid_search_service = HybridSearchService()
-except Exception as e:
-    logger.error(f"❌ 初始化失败: {e}")
-    hybrid_search_service = None
+hybrid_search_service = None
+
+def init_hybrid_search():
+    """
+    在 FastAPI 启动时调用此函数进行初始化
+    """
+    global hybrid_search_service
+    try:
+        hybrid_search_service = HybridSearchService()
+        logger.success("🚀 HybridSearchService 全局实例已创建")
+    except Exception as e:
+        logger.error(f"❌ HybridSearchService 初始化失败: {e}")
 
 
 if __name__ == "__main__":

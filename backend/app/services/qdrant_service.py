@@ -11,26 +11,23 @@ class QdrantManager:
     _client: QdrantClient = None
 
     def __init__(self):
-        self.url = settings.QDRANT_URL
-        self.api_key = settings.QDRANT_API_KEY
-        self.score_threshold = 0.6
-        self._connect()
+        self.client = None
+
+    def get_client(self):
+        # 懒加载：第一次被调用时才连接
+        if self.client is None:
+            self._connect()
+        return self.client
 
     def _connect(self):
         try:
-            if self.api_key:
-                self._client = QdrantClient(url=self.url, api_key=self.api_key)
-            else:
-                self._client = QdrantClient(path=self.url) if not self.url.startswith("http") else QdrantClient(url=self.url)
-            
-            logger.success(f"✅ Qdrant 客户端初始化成功: {self.url}")
+            # 你的本地路径配置
+            self.client = QdrantClient(path="./qdrant_data")
+            logger.success(f"✅ Qdrant 客户端初始化成功: ./qdrant_data")
         except Exception as e:
             logger.error(f"❌ Qdrant 初始化失败: {e}")
+            # 抛出异常，让上层感知
             raise e
-
-    def get_client(self) -> QdrantClient:
-        """获取原生客户端，方便给 LangChain 使用"""
-        return self._client
 
     def create_collection_if_not_exists(self, collection_name: str, vector_size: int = 4096):
         """

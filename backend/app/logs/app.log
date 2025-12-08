@@ -782,3 +782,111 @@ For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/erro
 2025-12-08 08:47:28.135 | INFO     | __main__:test:236 - 抽取实体: ['特斯拉', '中国']
 2025-12-08 08:47:28.135 | INFO     | __main__:test:237 - 匹配实体: []
 2025-12-08 08:47:28.135 | INFO     | __main__:test:238 - 图谱: 
+2025-12-08 09:14:42.428 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:14:42.438 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 09:14:42.661 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:14:43.497 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 09:14:43.497 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 09:14:43.499 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:14:43.501 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:14:43.505 | INFO     | __main__:<module>:33 - 🚀 启动服务器...
+2025-12-08 09:14:45.437 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:14:45.441 | ERROR    | app.services.qdrant_service:_connect:28 - ❌ Qdrant 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:14:45.622 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:14:45.622 | ERROR    | app.services.hybrid_search:<module>:219 - ❌ 初始化失败: 'NoneType' object has no attribute 'get_client'
+2025-12-08 09:14:45.684 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:14:45.684 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:15:29.116 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:15:29.122 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 09:15:29.348 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:15:29.777 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 09:15:29.777 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 09:15:29.779 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:15:29.780 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:15:29.784 | INFO     | __main__:<module>:33 - 🚀 启动服务器...
+2025-12-08 09:15:31.710 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:15:31.713 | ERROR    | app.services.qdrant_service:_connect:28 - ❌ Qdrant 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:15:31.897 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:15:31.897 | ERROR    | app.services.hybrid_search:<module>:219 - ❌ 初始化失败: 'NoneType' object has no attribute 'get_client'
+2025-12-08 09:15:31.958 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:15:31.959 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:21:52.905 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:21:52.909 | ERROR    | app.services.qdrant_service:_connect:28 - ❌ Qdrant 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:21:53.127 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:21:53.127 | ERROR    | app.services.hybrid_search:<module>:219 - ❌ 初始化失败: 'NoneType' object has no attribute 'get_client'
+2025-12-08 09:21:53.187 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:21:53.189 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:09.529 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:22:09.534 | ERROR    | app.services.qdrant_service:_connect:28 - ❌ Qdrant 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:22:09.762 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:09.763 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:09.794 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 09:22:09.853 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:22:09.853 | ERROR    | app.services.hybrid_search:init_hybrid_search:227 - ❌ HybridSearchService 初始化失败: 'NoneType' object has no attribute 'get_client'
+2025-12-08 09:22:30.870 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 09:22:33.567 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:22:33.792 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:33.793 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:33.821 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 09:22:33.882 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:22:33.885 | ERROR    | app.services.qdrant_service:_connect:30 - ❌ Qdrant 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:22:33.885 | ERROR    | app.services.hybrid_search:init_hybrid_search:227 - ❌ HybridSearchService 初始化失败: Storage folder ./qdrant_data is already accessed by another instance of Qdrant client. If you require concurrent access, use Qdrant server instead.
+2025-12-08 09:22:43.078 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 09:22:46.884 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:22:47.056 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:47.057 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:48.919 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:22:49.098 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:49.099 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:22:49.125 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 09:22:49.186 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:22:49.190 | SUCCESS  | app.services.qdrant_service:_connect:28 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 09:22:51.226 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 09:22:51.227 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 09:22:51.227 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 09:24:44.414 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 马斯克的太空公司是什么 (ID: user_123)
+2025-12-08 09:24:44.435 | INFO     | app.core.nodes.retrieval:retrieve_node:11 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 09:24:44.435 | ERROR    | app.core.nodes.retrieval:retrieve_node:29 - ❌ [RETRIEVAL] 失败: 'NoneType' object has no attribute 'search'
+2025-12-08 09:24:44.438 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 09:24:52.496 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是**SpaceX**（全称：**Space Exploration Technol...
+2025-12-08 09:24:52.497 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 09:25:18.157 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接且准确地回应了用户问题，基于事实知识无幻觉，即使上下文无关也合理。
+2025-12-08 09:26:05.457 | INFO     | app.main:lifespan:20 - 🛑 服务正在关闭...
+2025-12-08 09:26:08.390 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 09:26:08.613 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:26:08.614 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 09:26:08.640 | INFO     | app.main:lifespan:16 - 🔄 正在初始化核心服务...
+2025-12-08 09:26:08.700 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 09:26:08.706 | SUCCESS  | app.services.qdrant_service:_connect:28 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 09:26:09.085 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 09:26:09.086 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 09:26:09.086 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-08 09:26:16.972 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 马斯克的太空公司是什么 (ID: user_123)
+2025-12-08 09:26:16.981 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 09:26:18.268 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['马斯克']
+2025-12-08 09:26:18.590 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['马斯克']
+2025-12-08 09:26:18.592 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 09:26:29.470 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司主要有两家：
+
+1. **SpaceX（太空探索技术公司）**  
+   - 成立于...
+2025-12-08 09:26:29.471 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 09:27:05.660 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答正确识别了马斯克的主要太空公司 SpaceX，并合理解释了 The Boring Company 的相关性，整体准确、相关且合理。
+2025-12-08 09:30:30.982 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 马斯克的太空公司是什么 (ID: user_123)
+2025-12-08 09:30:30.990 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 09:30:32.258 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['马斯克']
+2025-12-08 09:30:32.844 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['马斯克']
+2025-12-08 09:30:32.846 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 09:30:52.323 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 马斯克的太空公司是 **SpaceX（全称 Space Exploration Technologi...
+2025-12-08 09:30:52.324 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 09:31:16.193 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答准确、相关且基于事实，直接回应了用户问题，无幻觉。
+2025-12-08 09:36:15.493 | INFO     | app.api.endpoints:chat_sync:78 - 收到同步请求: 马斯克的太空公司是什么
+2025-12-08 09:36:15.499 | INFO     | app.core.nodes.retrieval:retrieve_node:16 - 🔍 [RETRIEVAL] 开始检索: 马斯克的太空公司是什么
+2025-12-08 09:36:17.450 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['马斯克']
+2025-12-08 09:36:17.758 | INFO     | app.core.nodes.retrieval:retrieve_node:32 -    - 找到实体: ['马斯克']
+2025-12-08 09:36:17.760 | INFO     | app.core.nodes.generation:generation_node:18 - 🧠 [GENERATION] 正在生成回答...
+2025-12-08 09:36:36.840 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 根据公开信息，马斯克创立的太空公司是 **SpaceX（太空探索技术公司）**。
+
+这是其最核心且专...
+2025-12-08 09:36:36.841 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
+2025-12-08 09:37:05.807 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接且准确地提供了马斯克的太空公司为SpaceX，基于公开信息，无幻觉。
