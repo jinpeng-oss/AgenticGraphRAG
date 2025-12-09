@@ -24,5 +24,4 @@ workflow.add_edge("validate", END)
 memory = MemorySaver()
 app = workflow.compile(checkpointer=memory)
 
-# 导出给 main.py 或测试脚本使用
 __all__ = ["app"]

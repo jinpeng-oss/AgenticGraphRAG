@@ -1087,3 +1087,13 @@ For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/erro
 2025-12-08 18:38:27.019 | INFO     | app.core.nodes.generation:generation_node:27 - 初步生成回答: 关于东南大学《财务管理》课程第八周的具体授课内容，**目前没有公开的统一课表信息**，因为各学院（如...
 2025-12-08 18:38:27.022 | INFO     | app.core.nodes.validation:validation_node:29 - ⚖️ [VALIDATION] 正在校验...
 2025-12-08 18:38:53.898 | INFO     | app.core.nodes.validation:validation_node:46 -    - 结果: VALID | 理由: 回答直接回应用户问题，承认信息缺失但基于通用教学大纲合理推测并提供核实方法，无幻觉，符合可变通性。
+2025-12-08 19:08:36.126 | INFO     | app.main:lifespan:21 - 🛑 服务正在关闭...
+2025-12-08 19:08:39.656 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-08 19:08:39.898 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 19:08:39.899 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-08 19:08:39.934 | INFO     | app.main:lifespan:17 - 🔄 正在初始化核心服务...
+2025-12-08 19:08:39.998 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-08 19:08:40.008 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-08 19:08:40.927 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-08 19:08:40.927 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-08 19:08:40.927 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
