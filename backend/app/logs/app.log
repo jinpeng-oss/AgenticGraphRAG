@@ -310,3 +310,107 @@ Gwynne Shotwell -[COLLEAGUE_WITH]-> Elon Musk
 虽然上下文主要聚焦于关系结构，但结合背景知识可知，在 Elon Musk 的领导下，特斯拉不仅成为了全球最具价值的汽车公司之一，还极大地加速了电动汽车的普及。此外，Elon Musk 同时是 SpaceX、Neuralink 和 xAI 的创始人，这些事业与特斯拉在科技创新和长远愿景上存在协同。
 2025-12-09 19:33:50.583 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
 2025-12-09 19:34:23.343 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI的回答准确利用了上下文中的知识图谱关系，正确指出Elon Musk是Tesla的CEO以及中国设有Tesla工厂，并合理补充了Tesla的业务描述和背景信息，无逻辑错误或幻觉，符合用户问题的要求。 | 重试: 0
+2025-12-09 19:37:51.627 | INFO     | app.main:lifespan:38 - 🛑 服务关闭
+2025-12-09 19:37:54.563 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 19:37:54.793 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:37:54.795 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:37:54.823 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 19:37:54.883 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 19:37:54.894 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 19:37:55.489 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 19:37:55.489 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-09 19:37:55.490 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:227 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 19:37:55.490 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 19:38:59.846 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 19:39:02.733 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 19:39:02.954 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:39:02.955 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:39:02.982 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 19:39:03.044 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 19:39:03.051 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 19:39:03.792 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 19:39:03.793 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-09 19:39:03.793 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:227 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 19:39:03.793 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 19:39:07.043 | INFO     | app.api.endpoints:chat_sync:78 - 收到同步请求: 介绍一下Elon Musk的Tesla公司
+2025-12-09 19:39:07.047 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk的Tesla公司
+2025-12-09 19:39:08.667 | INFO     | app.services.hybrid_search:_extract_entities:149 - 提取实体: ['Elon Musk', 'Tesla']
+2025-12-09 19:39:09.296 | INFO     | app.services.hybrid_search:search:121 - 搜索完成: 抽取实体 ['Elon Musk', 'Tesla'], 匹配实体 [{'name': 'Elon Musk', 'score': 0.7783753543693563, 'type': 'Person'}, {'name': 'Gwynne Shotwell', 'score': 0.6982684214787671, 'type': 'Person'}, {'name': '中国', 'score': 0.41081421372256155, 'type': 'Country'}, {'name': '上海', 'score': 0.39223240830134115, 'type': 'City'}]
+2025-12-09 19:39:09.296 | INFO     | app.services.hybrid_search:search:122 - 图谱上下文: Elon Musk -[COLLEAGUE_WITH]-> Gwynne Shotwell
+Elon Musk -[FOUNDER_OF]-> xAI
+Elon Musk -[FOUNDER_OF]-> Neuralink
+Elon Musk -[CEO_OF]-> Tesla
+Elon Musk -[FOUNDER_OF]-> SpaceX
+Gwynne Shotwell -[PRESIDENT_OF]-> SpaceX
+Gwynne Shotwell -[COLLEAGUE_WITH]-> Elon Musk
+中国 -[HAS_FACTORY_IN]-> Tesla
+2025-12-09 19:39:09.296 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk', 'Tesla']
+2025-12-09 19:39:09.297 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 19:39:32.187 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: 好的，基于提供的上下文信息并结合相关背景知识，为您介绍埃隆·马斯克（Elon Musk）旗下的特斯拉（Tesla）公司。
+
+特斯拉是一家全球领先的电动汽车和清洁能源公司，由马丁·艾伯哈德和马克·塔彭宁于2003年创立。**埃隆·马斯克**于2004年加入公司，并通过领导早期的重要投资而成为董事长，并最终担任公司的**首席执行官（CEO）**。在他的领导下，特斯拉的愿景从生产高端电动跑车扩展为加速全球向可持续能源的转变。
+
+**公司的核心业务与产品包括：**
+1.  **电动汽车**：特斯拉的产品线涵盖了从高性能跑车（Roadster）、豪华轿车（Model S/X）到大众市场车型（Model 3/Y）以及即将上市的电动皮卡（Cybertruck）和重型卡车（Semi）。
+2.  **能源存储与发电**：特斯拉还生产家用和商用的储能产品（如Powerwall和Powerpack）以及太阳能屋顶（Solar Roof），旨在构建完整的可持续能源生态系统。
+3.  **自动驾驶技术**：特斯拉自主研发了先进的自动驾驶辅助系统（Autopilot）和全自动驾驶（FSD）软件，并通过其庞大的车队持续收集数据以改进算法。
+
+**一个重要的发展里程碑是全球化生产**。根据上下文信息，**特斯拉在中国（上海）建立了超级工厂**。这座工厂于2019年投产，是特斯拉在美国以外的首个超级工厂，对于特斯拉降低生产成本、提高产能以及满足全球特别是亚洲市场的需求起到了至关重要的作用。
+
+总而言之，特斯拉在埃隆·马斯克的领导下，不仅重新定义了电动汽车行业，也正在成为一家综合性的可持续能源公司，其全球生产布局（如在中国设厂）是其实现规模化和市场扩张的关键战略之一。
+2025-12-09 19:39:32.189 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 19:40:03.114 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: 回答准确且全面，正确使用了上下文中的信息（如 Elon Musk 是 Tesla 的 CEO 和中国有 Tesla 工厂），并基于背景知识提供了正确的特斯拉公司介绍，无幻觉或逻辑错误。 | 重试: 0
+2025-12-09 19:40:33.139 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 19:40:35.959 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 19:40:36.181 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:40:36.182 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 19:40:36.208 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 19:40:36.269 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 19:40:36.276 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 19:40:36.861 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 19:40:36.862 | SUCCESS  | app.services.hybrid_search:__init__:66 - ✅ HybridSearch初始化完成
+2025-12-09 19:40:36.862 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:227 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 19:40:36.863 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 19:40:40.689 | INFO     | app.api.endpoints:chat_sync:78 - 收到同步请求: 介绍一下Elon Musk的Tesla公司
+2025-12-09 19:40:40.694 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk的Tesla公司
+2025-12-09 19:40:42.376 | INFO     | app.services.hybrid_search:_extract_entities:149 - 提取实体: ['Elon Musk', 'Tesla']
+2025-12-09 19:40:47.075 | INFO     | app.services.hybrid_search:search:121 - 搜索完成: 抽取实体 ['Elon Musk', 'Tesla'], 匹配实体 [{'name': 'Elon Musk', 'score': 0.7783753543693563, 'type': 'Person'}, {'name': 'Gwynne Shotwell', 'score': 0.6982684214787671, 'type': 'Person'}, {'name': '中国', 'score': 0.4114707814021695, 'type': 'Country'}, {'name': '上海', 'score': 0.391356244788295, 'type': 'City'}]
+2025-12-09 19:40:47.075 | INFO     | app.services.hybrid_search:search:122 - 图谱上下文: Elon Musk -[COLLEAGUE_WITH]-> Gwynne Shotwell
+Elon Musk -[FOUNDER_OF]-> xAI
+Elon Musk -[FOUNDER_OF]-> Neuralink
+Elon Musk -[CEO_OF]-> Tesla
+Elon Musk -[FOUNDER_OF]-> SpaceX
+Gwynne Shotwell -[PRESIDENT_OF]-> SpaceX
+Gwynne Shotwell -[COLLEAGUE_WITH]-> Elon Musk
+中国 -[HAS_FACTORY_IN]-> Tesla
+2025-12-09 19:40:47.075 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk', 'Tesla']
+2025-12-09 19:40:47.076 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 19:41:15.353 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: 埃隆·马斯克是特斯拉（Tesla, Inc.）的联合创始人之一和现任首席执行官。特斯拉是一家美国电动汽车及清洁能源公司，总部位于得克萨斯州奥斯汀。
+
+**核心业务与产品：**
+特斯拉的核心使命是加速世界向可持续能源的转变。其主要业务包括：
+1.  **电动汽车：** 设计、制造和销售高性能的纯电动汽车。其知名车型包括：
+    *   **Model S：** 豪华轿车
+    *   **Model 3：** 面向大众市场的中型轿车
+    *   **Model X：** 豪华SUV
+    *   **Model Y：** 中型SUV
+    *   **Cybertruck：** 电动皮卡
+2.  **能源产品：** 生产和安装太阳能发电系统（如太阳能屋顶Solar Roof）以及储能产品（如家用储能电池Powerwall和商用储能系统Megapack）。
+
+**技术创新与影响：**
+特斯拉通过以下方式引领了行业变革：
+*   **长续航与高性能电池技术：** 不断推动电池能量密度和成本控制的进步。
+*   **自动驾驶技术：** 开发了名为“Autopilot”和“完全自动驾驶（FSD）”的辅助驾驶系统。
+*   **直营模式：** 采用线上销售和线下体验店的直营模式，改变了传统汽车销售体系。
+*   **超级充电网络：** 在全球建设了庞大的专用快速充电网络，解决了电动车长途旅行的充电焦虑。
+
+**全球布局与中国市场：**
+特斯拉在全球拥有多家工厂，包括美国加州弗里蒙特工厂、得州奥斯汀工厂、德国柏林工厂以及**至关重要的上海超级工厂**。上海超级工厂是特斯拉首个海外整车制造基地，对于提升其全球产能、降低成本和开拓中国市场起到了关键作用。
+
+**财务状况与挑战：**
+特斯拉是全球市值最高的汽车制造商之一。它同时也面临诸多挑战，包括激烈的市场竞争、供应链压力、自动驾驶系统的安全性与法规审核，以及马斯克本人管理多家公司所带来的关注度分散问题。
+
+**补充信息：**
+值得注意的是，埃隆·马斯克并非特斯拉的最初创始人。他于2004年以早期投资者的身份加入公司，并很快成为董事会主席和产品架构师，最终带领公司走向成功。
+2025-12-09 19:41:15.355 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 19:41:48.203 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI的回答准确介绍了Tesla公司，包括Elon Musk的角色（CEO和联合创始人）、核心业务（电动汽车和能源产品）、技术创新（如电池和自动驾驶）、全球布局（特别是上海超级工厂），与上下文提供的知识图谱关系（如Elon Musk -[CEO_OF]-> Tesla和 中国 -[HAS_FACTORY_IN]-> Tesla）一致，且基于常识判断内容正确、全面，无幻觉或逻辑错误。 | 重试: 0
