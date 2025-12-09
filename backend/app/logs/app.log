@@ -497,3 +497,281 @@ Gwynne Shotwell -[COLLEAGUE_WITH]-> Elon Musk
 2025-12-09 19:51:47.984 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
 2025-12-09 19:51:47.984 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:228 - 🚀 HybridSearchService 全局实例已创建
 2025-12-09 19:51:47.985 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:05:30.908 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:05:35.229 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:05:35.451 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:05:35.452 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:05:37.333 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:05:37.517 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:05:37.517 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:05:37.545 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:05:37.607 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:05:37.610 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:05:38.212 | SUCCESS  | app.services.hybrid_search:_init_qdrant:85 - ✅ 已创建新集合: test-collection
+2025-12-09 20:05:38.655 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:05:38.656 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:05:38.656 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:228 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:05:38.657 | INFO     | app.main:lifespan:26 - 🔄 首次同步知识库...
+2025-12-09 20:05:38.657 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] Neo4j -> Qdrant 全量同步开始...
+2025-12-09 20:05:38.668 | INFO     | app.services.data_sync:sync_knowledge_base:32 - 📊 Neo4j 查询到 15 条实体
+2025-12-09 20:05:38.759 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:05:38.759 | INFO     | app.services.data_sync:sync_knowledge_base:76 - ✅ 使用现有集合: test-collection
+2025-12-09 20:05:39.776 | SUCCESS  | app.services.data_sync:sync_knowledge_base:109 - ✅ 同步完成！实际写入 15 条实体
+2025-12-09 20:05:39.776 | INFO     | app.main:lifespan:28 - 🔄 同步结果: {'status': 'success', 'count': 15, 'actual_count': 15}
+2025-12-09 20:06:01.705 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] Neo4j -> Qdrant 全量同步开始...
+2025-12-09 20:06:01.713 | INFO     | app.services.data_sync:sync_knowledge_base:32 - 📊 Neo4j 查询到 15 条实体
+2025-12-09 20:06:01.818 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:06:01.819 | INFO     | app.services.data_sync:sync_knowledge_base:76 - ✅ 使用现有集合: test-collection
+2025-12-09 20:06:01.819 | INFO     | app.services.data_sync:sync_knowledge_base:81 - 🗑️ 清空 15 条旧数据
+2025-12-09 20:06:03.863 | SUCCESS  | app.services.data_sync:sync_knowledge_base:109 - ✅ 同步完成！实际写入 15 条实体
+2025-12-09 20:08:46.359 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 东南大学财务管理课程第八周上了什么 (ID: user_123)
+2025-12-09 20:08:46.368 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 东南大学财务管理课程第八周上了什么
+2025-12-09 20:08:48.262 | INFO     | app.services.hybrid_search:_extract_entities:150 - 提取实体: ['东南大学', '财务管理课程']
+2025-12-09 20:08:48.894 | INFO     | app.services.hybrid_search:search:122 - 搜索完成: 抽取实体 ['东南大学', '财务管理课程'], 匹配实体 [{'name': 'Cybertruck', 'score': 0.5265365878335673, 'type': 'Car'}, {'name': 'xAI', 'score': 0.4792105802789281, 'type': 'Company'}, {'name': 'Starlink', 'score': 0.3732928654034191, 'type': 'Product'}, {'name': '上海', 'score': 0.3483721478123918, 'type': 'City'}]
+2025-12-09 20:08:48.894 | INFO     | app.services.hybrid_search:search:123 - 图谱上下文: Starlink -[OPERATES]-> SpaceX
+Cybertruck -[PRODUCES]-> Tesla
+xAI -[FOUNDER_OF]-> Elon Musk
+2025-12-09 20:08:48.894 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['东南大学', '财务管理课程']
+2025-12-09 20:08:48.895 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:08:59.810 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: 我无法获取东南大学财务管理课程第八周的具体授课内容，因为这类信息通常由授课教师根据实际教学进度安排，且不同学年或班级可能存在差异。
+
+建议您通过以下途径获取准确信息：
+1. 查看课程教学大纲（通常在学期初由教师提供）
+2. 联系授课教师或助教
+3. 查阅课程平台（如Canvas、超星等）发布的每周学习资料
+4. 询问同班级同学
+
+如果您需要了解财务管理课程的常见知识模块（如资本预算、财务分析等），我可以为您提供相关概念解析。
+2025-12-09 20:08:59.812 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 20:09:32.229 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI正确识别了无法获取特定课程的具体周次信息，并基于一般知识提供了合理的建议，如查看教学大纲、联系教师等，回答诚实、逻辑正确、格式合适。尽管检索上下文不相关，但AI的回答符合要求。 | 重试: 0
+2025-12-09 20:09:42.395 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 东南大学财务管理课程第八周上了什么 (ID: user_123)
+2025-12-09 20:09:42.400 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 东南大学财务管理课程第八周上了什么
+2025-12-09 20:09:44.028 | INFO     | app.services.hybrid_search:_extract_entities:150 - 提取实体: ['东南大学', '财务管理课程']
+2025-12-09 20:09:44.547 | INFO     | app.services.hybrid_search:search:122 - 搜索完成: 抽取实体 ['东南大学', '财务管理课程'], 匹配实体 [{'name': 'Cybertruck', 'score': 0.5265365269713378, 'type': 'Car'}, {'name': 'xAI', 'score': 0.47921052103086625, 'type': 'Company'}, {'name': 'Starlink', 'score': 0.3732928654034191, 'type': 'Product'}, {'name': '上海', 'score': 0.3483721478123918, 'type': 'City'}]
+2025-12-09 20:09:44.547 | INFO     | app.services.hybrid_search:search:123 - 图谱上下文: Starlink -[OPERATES]-> SpaceX
+Cybertruck -[PRODUCES]-> Tesla
+xAI -[FOUNDER_OF]-> Elon Musk
+2025-12-09 20:09:44.547 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['东南大学', '财务管理课程']
+2025-12-09 20:09:44.548 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:10:06.642 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: 我无法获取东南大学财务管理课程第八周的具体授课内容。大学课程的具体安排（如每周讲授的章节或主题）通常由授课教师根据教学大纲和实际进度决定，并且可能因学年、班级和教师的不同而有所差异。
+
+要获得最准确的信息，建议您：
+1.  **查阅课程教学大纲**：这是最权威的来源，通常会明确列出每周的教学计划。
+2.  **查看课程网络平台**：登录学校使用的教学管理系统（如超星学习通、Canvas、Blackboard等），教师通常会在上面发布每周的学习资料和通知。
+3.  **直接联系授课教师或助教**：这是获取官方信息最直接有效的方式。
+4.  **询问同班同学**：参考课堂笔记或与同学核对。
+
+不过，作为参考，在一般高校的《财务管理》课程中，**第八周左右**的教学进度通常会涉及课程中段的重要核心内容。根据常见的教学大纲编排，这个阶段可能会涵盖以下一个或几个主题：
+*   **资本预算与投资决策**：讲解净现值（NPV）、内含报酬率（IRR）等主要评估方法。
+*   **风险与收益**：介绍资本资产定价模型（CAPM）。
+*   **资本成本**：讲解加权平均资本成本（WACC）的计算与应用。
+*   **杠杆效应**：分析经营杠杆、财务杠杆和总杠杆。
+
+如果您对上述某个财务管理的具体概念有疑问，我可以为您提供详细的解释。
+2025-12-09 20:10:06.644 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 20:10:29.380 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI的回答诚实地承认了无法获取具体课程内容，提供了合理的建议和一般性参考，没有幻觉或错误，符合知识判断。 | 重试: 0
+2025-12-09 20:10:47.029 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 介绍一下Elon Musk (ID: user_123)
+2025-12-09 20:10:47.034 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk
+2025-12-09 20:10:48.864 | INFO     | app.services.hybrid_search:_extract_entities:150 - 提取实体: ['Elon Musk']
+2025-12-09 20:10:49.385 | INFO     | app.services.hybrid_search:search:122 - 搜索完成: 抽取实体 ['Elon Musk'], 匹配实体 [{'name': '中国', 'score': 0.4110048564505844, 'type': 'Country'}, {'name': '上海', 'score': 0.39271773612633376, 'type': 'City'}]
+2025-12-09 20:10:49.385 | INFO     | app.services.hybrid_search:search:123 - 图谱上下文: 中国 -[HAS_FACTORY_IN]-> Tesla
+上海 -[HOSTS_FACTORY_OF]-> Tesla
+2025-12-09 20:10:49.386 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk']
+2025-12-09 20:10:49.387 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:11:46.880 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: **埃隆·马斯克**是一位极具影响力的企业家、工程师和发明家，以其颠覆性的创新精神和对未来科技的宏伟愿景而闻名于世。他目前是**太空探索技术公司**和**特斯拉公司**的首席执行官，同时也是多家前沿科技公司的创始人或联合创始人。
+
+**主要成就与旗下公司：**
+
+1.  **太空探索技术公司**：他创立了SpaceX，目标是降低太空运输成本，并最终实现人类跨行星生存。该公司取得了多项里程碑式成就，例如可重复使用的猎鹰系列火箭、执行国际空间站货运任务的龙飞船，以及正在开发的用于火星殖民的巨型飞船“星舰”。
+
+2.  **特斯拉公司**：作为电动汽车和清洁能源领域的革命者，特斯拉推动了全球汽车产业向电动化转型。公司不仅生产高端电动汽车，还致力于打造完整的可持续能源生态系统，包括太阳能产品、储能系统和自动驾驶技术。特斯拉在全球设有多个超级工厂，其上海超级工厂是其全球生产布局中至关重要的一环，高效供应着中国乃至全球市场。
+
+3.  **其他前沿项目**：
+    *   **Neuralink**：专注于开发脑机接口技术，旨在连接人脑与计算机，以治疗脑部疾病并最终增强人类能力。
+    *   **The Boring Company**：致力于解决城市交通拥堵问题，通过挖掘地下隧道网络来构建高速交通系统。
+    *   **X.com / 社交媒体平台X**：他收购并重塑了社交媒体平台Twitter（现更名为X），旨在打造一个功能全面的“万能应用”。
+
+**个人风格与影响力：**
+马斯克以其大胆、直言不讳甚至颇具争议的作风著称。他通常设定极其宏大的目标，并凭借强大的执行力推动团队实现。他的工作涵盖了从地球交通、可持续能源到太空探索和人类神经科学等多个关乎人类未来的核心领域，使他成为当今时代最受瞩目也最具争议的科技领袖之一。
+
+总而言之，埃隆·马斯克是一位通过创办和领导一系列高科技公司，深刻改变着交通运输、能源和太空探索等行业的梦想家与实践者。
+2025-12-09 20:11:46.886 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 20:12:22.664 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI的回答基于其知识准确、全面地介绍了Elon Musk，包括他的背景、成就和公司，并适当整合了上下文中的特斯拉上海工厂信息，没有幻觉、逻辑错误或格式问题。 | 重试: 0
+2025-12-09 20:12:22.765 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:12:26.001 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:12:26.262 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:12:26.263 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:12:26.296 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:12:26.363 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:12:26.372 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:12:27.333 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:12:27.334 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:12:27.334 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:12:27.334 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:18:09.665 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:18:12.690 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:18:12.928 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:18:12.929 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:18:12.958 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:18:13.022 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:18:13.028 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:18:13.630 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:18:13.630 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:18:13.630 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:18:13.631 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:18:17.749 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] 全图谱同步开始（Person/Company/Product/Location...）
+2025-12-09 20:18:17.831 | INFO     | app.services.data_sync:sync_knowledge_base:41 - 📊 发现 16 个节点
+2025-12-09 20:18:17.831 | INFO     | app.services.data_sync:sync_knowledge_base:74 - 📈 节点分布: {'Company': 5, 'Person': 3, 'Car': 2, 'Rocket': 2, 'Software': 1}...
+2025-12-09 20:18:17.919 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:18:17.919 | INFO     | app.services.data_sync:sync_knowledge_base:95 - 🗑️ 清空 15 条旧数据
+2025-12-09 20:19:19.740 | SUCCESS  | app.services.data_sync:sync_knowledge_base:118 - ✅ 全图谱同步完成！16 条向量
+2025-12-09 20:20:39.995 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:20:42.867 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:20:43.090 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:20:43.091 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:20:43.118 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:20:43.180 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:20:43.188 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:20:43.782 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:20:43.783 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:20:43.783 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:20:43.783 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:20:46.393 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 全图谱同步开始...
+2025-12-09 20:20:46.580 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:20:47.382 | SUCCESS  | app.services.data_sync:sync_knowledge_base:74 - ✅ 同步完成！0 条真实数据
+2025-12-09 20:22:11.238 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:22:14.160 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:22:14.390 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:22:14.391 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:22:14.420 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:22:14.483 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:22:14.486 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:22:15.014 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:22:15.014 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:22:15.015 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:225 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:22:15.015 | INFO     | app.main:lifespan:26 - 🔄 首次同步知识库...
+2025-12-09 20:22:15.015 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] Neo4j -> Qdrant 全量同步开始...
+2025-12-09 20:22:15.065 | INFO     | app.services.data_sync:sync_knowledge_base:33 - 📊 Neo4j 查询到 16 条实体
+2025-12-09 20:22:15.153 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:22:15.154 | INFO     | app.services.data_sync:sync_knowledge_base:77 - ✅ 使用现有集合: test-collection
+2025-12-09 20:22:16.198 | SUCCESS  | app.services.data_sync:sync_knowledge_base:110 - ✅ 同步完成！实际写入 16 条实体
+2025-12-09 20:22:16.198 | INFO     | app.main:lifespan:28 - 🔄 同步结果: {'status': 'success', 'count': 16, 'actual_count': 16}
+2025-12-09 20:22:23.961 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] Neo4j -> Qdrant 全量同步开始...
+2025-12-09 20:22:23.977 | INFO     | app.services.data_sync:sync_knowledge_base:33 - 📊 Neo4j 查询到 16 条实体
+2025-12-09 20:22:24.065 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:22:24.065 | INFO     | app.services.data_sync:sync_knowledge_base:77 - ✅ 使用现有集合: test-collection
+2025-12-09 20:22:24.065 | INFO     | app.services.data_sync:sync_knowledge_base:82 - 🗑️ 清空 16 条旧数据
+2025-12-09 20:22:25.684 | SUCCESS  | app.services.data_sync:sync_knowledge_base:110 - ✅ 同步完成！实际写入 16 条实体
+2025-12-09 20:23:16.414 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 介绍一下Elon Musk (ID: user_123)
+2025-12-09 20:23:16.424 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk
+2025-12-09 20:23:18.343 | INFO     | app.services.hybrid_search:_extract_entities:147 - 提取实体: ['Elon Musk']
+2025-12-09 20:23:18.940 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk']
+2025-12-09 20:23:18.942 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:23:39.463 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: Elon Musk（埃隆·马斯克）是一位出生于南非的企业家、工程师和发明家，以其在颠覆性科技领域的雄心勃勃的创业而闻名全球。他目前是太空探索技术公司（SpaceX）的首席执行官兼总工程师，特斯拉（Tesla）的首席执行官，同时也是神经科技公司Neuralink和基础设施公司The Boring Company的创始人。此外，他也是社交媒体平台X（原Twitter）的所有者。
+
+他的职业生涯始于互联网时代初期，与他人共同创立了Zip2和X.com（后者演变为PayPal）。在出售PayPal后，他将大部分资金投入了 SpaceX 和特斯拉这两家当时极具风险的公司。
+
+马斯克的核心目标围绕着人类的长远未来：通过 SpaceX 降低太空运输成本并最终实现火星殖民；通过特斯拉加速全球向可持续能源的转变。他的其他项目也指向未来：Neuralink 致力于脑机接口，The Boring Company 旨在解决城市交通拥堵。
+
+他以其宏大的愿景、高强度的工作要求、在社交媒体上的活跃言论以及经常挑战传统行业和监管框架的风格而著称，既被许多人奉为“现实版钢铁侠”和创新偶像，其言行也时常引发争议。在中国市场，他旗下的特斯拉公司在上海建立了重要的超级工厂，这对其全球产能和在中国新能源汽车市场的发展起到了关键作用。
+2025-12-09 20:23:39.464 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 20:24:10.678 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI 的回答全面介绍了 Elon Musk，包括他的背景、职业、公司和目标，并且正确整合了上下文中的知识图谱信息，提到了特斯拉在上海的超级工厂。回答准确无误，符合用户问题。 | 重试: 0
+2025-12-09 20:24:51.197 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:24:54.262 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:24:56.401 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:24:56.621 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:24:56.622 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:24:56.649 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:24:56.713 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:24:56.721 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:24:57.273 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:24:57.274 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:24:57.274 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:227 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:24:57.275 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:25:00.806 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 介绍一下Elon Musk (ID: user_123)
+2025-12-09 20:25:00.817 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk
+2025-12-09 20:25:02.497 | INFO     | app.services.hybrid_search:_extract_entities:149 - 提取实体: ['Elon Musk']
+2025-12-09 20:25:03.118 | INFO     | app.services.hybrid_search:search:122 - 🔍 [RETRIEVAL]: 查找到图谱关系: 中国 -[HAS_FACTORY_IN]-> Tesla
+上海 -[HOSTS_FACTORY_OF]-> Tesla
+2025-12-09 20:25:03.118 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk']
+2025-12-09 20:25:03.120 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:25:24.771 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:25:27.609 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:25:27.867 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:25:27.868 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:25:27.897 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:25:27.963 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:25:27.968 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:25:28.541 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:25:28.541 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:25:28.541 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:229 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:25:28.542 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:25:28.594 | INFO     | app.api.endpoints:chat_stream:66 - 收到请求: 介绍一下Elon Musk (ID: user_123)
+2025-12-09 20:25:28.607 | INFO     | app.core.nodes.retrieval:retrieve_node:12 - 🔍 [RETRIEVAL] 开始检索: 介绍一下Elon Musk
+2025-12-09 20:25:30.126 | INFO     | app.services.hybrid_search:_extract_entities:151 - 提取实体: ['Elon Musk']
+2025-12-09 20:25:30.435 | INFO     | app.services.hybrid_search:search:119 - 🔍 [RETRIEVAL]: 匹配到实体: [{'name': '中国', 'score': 0.41015169496265713, 'type': 'Country'}, {'name': '上海', 'score': 0.39078083392644325, 'type': 'City'}]
+2025-12-09 20:25:30.443 | INFO     | app.services.hybrid_search:search:124 - 🔍 [RETRIEVAL]: 查找到图谱关系: 中国 -[HAS_FACTORY_IN]-> Tesla
+上海 -[HOSTS_FACTORY_OF]-> Tesla
+2025-12-09 20:25:30.443 | INFO     | app.core.nodes.retrieval:retrieve_node:28 -    - 找到实体: ['Elon Musk']
+2025-12-09 20:25:30.446 | INFO     | app.core.nodes.generation:generation_node:14 - 🧠 [GENERATION] 生成中...
+2025-12-09 20:25:49.599 | INFO     | app.core.nodes.generation:generation_node:30 - 🧠 [GENERATION] 生成完成: 埃隆·马斯克（Elon Musk）是一位具有全球影响力的企业家、工程师和发明家，以其雄心勃勃的愿景和对多个前沿科技领域的颠覆性创新而闻名。
+
+他最为人熟知的身份包括：
+*   **特斯拉（Tesla）** 的联合创始人兼首席执行官，他领导公司推动了电动汽车的普及和能源存储革命，特斯拉在全球（包括中国上海设有重要超级工厂）的业务对汽车产业产生了深远影响。
+*   **太空探索技术公司（SpaceX）** 的创始人兼首席执行官，目标是降低太空运输成本并实现火星殖民，其“猎鹰”系列火箭和“星链”项目已取得突破性成就。
+*   **Neuralink** 和 **The Boring Company** 的创始人，分别致力于开发脑机接口技术和地下隧道交通系统。
+
+马斯克出生于南非，拥有物理学和经济学背景。他的核心驱动力是解决人类面临的长期挑战，如转向可持续能源、确保人类成为多行星物种以及实现人工智能与人类的良性共生。他以其大胆的设想、高强度的工作风格和在社交媒体上的活跃表现，成为一个备受瞩目且充满争议的科技领袖。
+2025-12-09 20:25:49.601 | INFO     | app.core.nodes.validation:validation_node:24 - ⚖️ [VALIDATION] 正在评估...
+2025-12-09 20:26:18.157 | INFO     | app.core.nodes.validation:validation_node:37 -    - 动作: pass | 理由: AI 的回答全面、准确地介绍了 Elon Musk，涵盖了其背景、公司和影响，并正确引用了上下文中关于 Tesla 在 Shanghai 工厂的信息，符合用户要求，没有幻觉或错误。 | 重试: 0
+2025-12-09 20:26:18.256 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:26:21.001 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:26:21.221 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:26:21.222 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:26:21.252 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:26:21.314 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:26:21.320 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:26:22.024 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:26:22.024 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:26:22.024 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:229 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:26:22.024 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:26:22.025 | INFO     | app.services.data_sync:sync_knowledge_base:18 - 🔄 [Sync] Neo4j -> Qdrant 全量同步开始...
+2025-12-09 20:26:22.029 | INFO     | app.services.data_sync:sync_knowledge_base:29 - 🔄 [Sync] Neo4j 查询到 16 条数据: [{'name': 'Elon Musk', 'desc': '科技企业家，SpaceX/Tesla/Neuralink创始人', 'labels': ['Person', 'Entity', 'Founder']}, {'name': 'Gwynne Shotwell', 'desc': 'SpaceX总裁兼COO', 'labels': ['Person', 'Entity', 'Engineer']}, {'name': 'SpaceX', 'desc': '太空探索技术公司，星舰/猎鹰火箭', 'labels': ['Entity', 'Company']}, {'name': 'Starship', 'desc': '全可重复使用超重型运载火箭', 'labels': ['Entity', 'Rocket']}, {'name': 'Falcon 9', 'desc': '可重复使用中型运载火箭', 'labels': ['Entity', 'Rocket']}, {'name': 'Starlink', 'desc': '低轨卫星互联网星座', 'labels': ['Entity', 'Product']}, {'name': 'Tesla', 'desc': '电动汽车和清洁能源公司', 'labels': ['Entity', 'Company']}, {'name': 'Model 3', 'desc': '中型纯电轿车，年销量冠军', 'labels': ['Entity', 'Car']}, {'name': 'Cybertruck', 'desc': '不锈钢电动皮卡', 'labels': ['Entity', 'Car']}, {'name': 'FSD', 'desc': '全自动驾驶软件', 'labels': ['Entity', 'Software']}, {'name': 'Neuralink', 'desc': '脑机接口技术公司', 'labels': ['Entity', 'Company']}, {'name': 'xAI', 'desc': '通用人工智能公司，Grok大模型', 'labels': ['Entity', 'Company']}, {'name': 'X平台', 'desc': '社交媒体平台（原Twitter）', 'labels': ['Entity', 'Company']}, {'name': '中国', 'desc': 'Tesla上海超级工厂所在地', 'labels': ['Entity', 'Country']}, {'name': '上海', 'desc': 'Tesla中国最大工厂', 'labels': ['Entity', 'City']}, {'name': 'Neo', 'desc': None, 'labels': ['Person']}]
+2025-12-09 20:26:22.029 | INFO     | app.services.data_sync:sync_knowledge_base:35 - 📊 Neo4j 查询到 16 条实体
+2025-12-09 20:26:22.102 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:26:22.102 | INFO     | app.services.data_sync:sync_knowledge_base:79 - ✅ 使用现有集合: test-collection
+2025-12-09 20:26:22.102 | INFO     | app.services.data_sync:sync_knowledge_base:84 - 🗑️ 清空 16 条旧数据
+2025-12-09 20:26:24.049 | SUCCESS  | app.services.data_sync:sync_knowledge_base:112 - ✅ 同步完成！实际写入 16 条实体
+2025-12-09 20:28:40.957 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:28:44.023 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:28:44.280 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:28:44.281 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:28:44.313 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:28:44.385 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:28:44.392 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:28:44.980 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:28:44.980 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:28:44.980 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:229 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:28:44.980 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:28:54.074 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:28:57.050 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:28:57.319 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:28:57.320 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:28:57.350 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:28:57.416 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:28:57.422 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:28:58.012 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:28:58.013 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:28:58.013 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:229 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:28:58.013 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪
+2025-12-09 20:29:08.724 | INFO     | app.main:lifespan:37 - 🛑 服务关闭
+2025-12-09 20:29:11.140 | SUCCESS  | app.services.neo4j_service:_connect:25 - ✅ Neo4j 连接成功: bolt://localhost:7687
+2025-12-09 20:29:11.358 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:29:11.359 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: smart | Model: deepseek-reasoner | Temp: 0.7
+2025-12-09 20:29:11.385 | INFO     | app.main:lifespan:14 - 🚀 服务启动中...
+2025-12-09 20:29:11.448 | SUCCESS  | app.services.embedding_factory:get_embedding:41 - ✅ Embedding 已初始化 | Model: Qwen/Qwen3-Embedding-8B
+2025-12-09 20:29:11.454 | SUCCESS  | app.services.qdrant_service:_connect:26 - ✅ Qdrant 客户端初始化成功: ./qdrant_data
+2025-12-09 20:29:12.394 | SUCCESS  | app.services.llm_factory:get_llm:80 - ✅ LLM 已初始化 | Mode: fast | Model: deepseek-chat | Temp: 0.0
+2025-12-09 20:29:12.395 | SUCCESS  | app.services.hybrid_search:__init__:67 - ✅ HybridSearch初始化完成
+2025-12-09 20:29:12.395 | SUCCESS  | app.services.hybrid_search:init_hybrid_search:229 - 🚀 HybridSearchService 全局实例已创建
+2025-12-09 20:29:12.395 | INFO     | app.main:lifespan:30 - ✅ 知识库已就绪

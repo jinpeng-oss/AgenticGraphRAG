@@ -116,12 +116,13 @@ class HybridSearchService:
         # Step 2: Qdrant找相似实体
         matched_entities = await self._qdrant_match_entities(entities, top_k)
         
+        logger.info(f"🔍 [RETRIEVAL]: 匹配到实体: {matched_entities}")
+        
         # Step 3: Neo4j查图信息
         graph_context = await self._neo4j_get_graph(matched_entities)
-        
-        logger.info(f"搜索完成: 抽取实体 {entities}, 匹配实体 {matched_entities}")
-        logger.info(f"图谱上下文: {graph_context}")
-        
+
+        logger.info(f"🔍 [RETRIEVAL]: 查找到图谱关系: {graph_context}")
+
         # 组装上下文
         context_parts = []
         if matched_entities:

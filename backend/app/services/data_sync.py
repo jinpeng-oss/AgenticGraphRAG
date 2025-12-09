@@ -19,11 +19,14 @@ class DataSyncService:
         
         # 1. 从 Neo4j 拉数据
         cypher = """
-        MATCH (n:Entity)
+        MATCH (n)
+        WHERE n.name IS NOT NULL
         RETURN n.name as name, n.description as desc, labels(n) as labels
         """
         records = neo4j_manager.execute_query(cypher)
         data = getattr(records, 'records', records) or []
+        
+        logger.info(f"🔄 [Sync] Neo4j 查询到 {len(data)} 条数据: {data}")
         
         if not data:
             logger.warning("⚠️ Neo4j 为空，跳过同步")
@@ -54,21 +57,17 @@ class DataSyncService:
         client = qdrant_manager.get_client()
         embeddings = embedding_factory.get_embedding()
         
-        # ✅ 关键修复：总是确保集合存在
+        # 总是确保集合存在
         if not client.collection_exists(self.collection_name):
             try:
-                # 动态获取维度
-                dummy_vec = embeddings.embed_query("马斯克")  # 用真实词更好
-                vector_size = len(dummy_vec)
-                
                 client.create_collection(
                     collection_name=self.collection_name,
                     vectors_config=models.VectorParams(
-                        size=vector_size,
+                        size=settings.EMBD_DIMENSIONS,
                         distance=models.Distance.COSINE
                     )
                 )
-                logger.success(f"✅ 创建新集合: {self.collection_name} (维度: {vector_size})")
+                logger.success(f"✅ 创建新集合: {self.collection_name} (维度: {settings.EMBD_DIMENSIONS})")
             except Exception as e:
                 logger.error(f"❌ 创建集合失败: {e}")
                 return {"status": "failed", "error": f"create_collection: {e}"}
@@ -81,11 +80,10 @@ class DataSyncService:
                     logger.info(f"🗑️ 清空 {collection_info.points_count} 条旧数据")
                     client.delete_collection(self.collection_name)
                     # 重新创建
-                    dummy_vec = embeddings.embed_query("马斯克")
                     client.create_collection(
                         collection_name=self.collection_name,
                         vectors_config=models.VectorParams(
-                            size=len(dummy_vec),
+                            size=settings.EMBD_DIMENSIONS,
                             distance=models.Distance.COSINE
                         )
                     )
