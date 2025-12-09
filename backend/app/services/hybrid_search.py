@@ -118,6 +118,9 @@ class HybridSearchService:
         # Step 3: Neo4j查图信息
         graph_context = await self._neo4j_get_graph(matched_entities)
         
+        logger.info(f"搜索完成: 抽取实体 {entities}, 匹配实体 {matched_entities}")
+        logger.info(f"图谱上下文: {graph_context}")
+        
         # 组装上下文
         context_parts = []
         if matched_entities:
@@ -125,7 +128,6 @@ class HybridSearchService:
             context_parts.append(f"涉及实体：{', '.join(names)}")
         if graph_context:
             context_parts.append(f"知识图谱关系：\n{graph_context}")
-            
         return {
             "context_text": "\n".join(context_parts),
             "entities": entities,

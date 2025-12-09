@@ -7,6 +7,7 @@ import app.services.qdrant_service as qdrant_svc
 from app.core.config import settings
 from app.services.embedding_factory import embedding_factory
 from app.api.schemas import SystemHealthResponse, ComponentStatus, ModelConfigInfo
+from app.services.data_sync import data_sync_service
 
 router = APIRouter()
 
@@ -42,6 +43,18 @@ async def get_system_health():
         components=components
     )
 
+@router.post("/sync")
+async def trigger_sync():
+    """
+    手动触发知识库同步 (Neo4j -> Qdrant)
+    当图谱数据更新后，调用此接口刷新向量索引
+    """
+    try:
+        result = await data_sync_service.sync_knowledge_base()
+        return result
+    except Exception as e:
+        return {"status": "failed", "error": str(e)}
+    
 @router.get("/models")
 async def get_model_configs():
     """

@@ -1,3 +1,4 @@
+# app/main.py - v1 简化版
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -6,36 +7,37 @@ import uvicorn
 from app.core.logger import logger
 from app.api.endpoints import router as chat_router
 from app.api.monitor import router as monitor_router
+from app.services.hybrid_search import init_hybrid_search  # 只需这个
 
-# ✅ 引入初始化函数
-from app.services.hybrid_search import init_hybrid_search
-
-# 定义生命周期管理器
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # 🟢 启动时执行：初始化服务
-    logger.info("🔄 正在初始化核心服务...")
+    logger.info("🚀 服务启动中...")
+    
     init_hybrid_search()
+    
+    try:
+        from app.services.qdrant_service import qdrant_manager
+        from app.services.data_sync import data_sync_service
+        
+        client = qdrant_manager.get_client()
+        collection = "test-collection"
+        
+        if not client.collection_exists(collection) or client.get_collection(collection).points_count == 0:
+            logger.info("🔄 首次同步知识库...")
+            result = await data_sync_service.sync_knowledge_base()  # ✅ 捕获返回值
+            logger.info(f"🔄 同步结果: {result}")  # ✅ 打印结果
+        else:
+            logger.info("✅ 知识库已就绪")
+            
+    except Exception as e:
+        logger.error(f"❌ 同步失败详情: {e}")  # ✅ 更详细错误
+        logger.warning("⚠️ 同步失败，但服务正常启动（可通过 API 手动同步）")
+    
     yield
-    # 🔴 关闭时执行（可选）：清理资源
-    logger.info("🛑 服务正在关闭...")
+    logger.info("🛑 服务关闭")
 
-# 初始化 FastAPI (挂载 lifespan)
-app = FastAPI(
-    title="Agentic GraphRAG API",
-    lifespan=lifespan, # 👈 关键点
-    version="1.0.0"
-)
-
-# ... 后面的 CORS 和路由配置保持不变 ...
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
+app = FastAPI(title="Agentic GraphRAG", lifespan=lifespan)
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 app.include_router(chat_router, prefix="/api/v1")
 app.include_router(monitor_router, prefix="/api/v1/monitor")
 
