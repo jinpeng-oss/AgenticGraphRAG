@@ -24,3 +24,5 @@ class AgentState(TypedDict):
     # ---------------- 校验结果 ----------------
     validation_status: str   # valid / invalid / error
     validation_reason: str   # 评分理由
+    
+    retry_count: int
